@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background: linear-gradient(56deg, #001331, #001331);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #text {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .calculator {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #display {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        .wrap {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        input[type="button"] {
+            width: 90%;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .number {
+            background-color: #06d490;
+            color: white;
+        }
+
+        .operator {
+            background-color: #ff6666;
+            color: white;
+        }
+
+        .clear {
+            background-color: #ffcc00;
+            color: white;
+        }
+
+        .equal {
+            background-color: #06d490;
+            color: white;
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 600px) {
+            .calculator {
+                padding: 10px;
+            }
+            #display {
+                font-size: 16px;
+            }
+            input[type="button"] {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="text">
+            <h1><span>Calculator </span> App </h1>
+            <h1>using</h1>
+            <h1 class="red"> Html,Css</h1>
+            <h1> & Javascript</h1>
+            <h4>Level : Easy</h4>
+        </div>
+
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+            <div class="wrap">
+                <input type="button" class="number" value="1" onclick="addToDisplay('1')">
+                <input type="button" class="number" value="2" onclick="addToDisplay('2')">
+                <input type="button" class="number" value="3" onclick="addToDisplay('3')">
+                <input type="button" class="operator" value="+" onclick="addToDisplay('+')">
+                <input type="button" class="number" value="4" onclick="addToDisplay('4')">
+                <input type="button" class="number" value="5" onclick="addToDisplay('5')">
+                <input type="button" class="number" value="6" onclick="addToDisplay('6')">
+                <input type="button" class="operator" value="-" onclick="addToDisplay('-')">
+                <input type="button" class="number" value="7" onclick="addToDisplay('7')">
+                <input type="button" class="number" value="8" onclick="addToDisplay('8')">
+                <input type="button" class="number" value="9" onclick="addToDisplay('9')">
+                <input type="button" class="operator" value="*" onclick="addToDisplay('*')">
+                <input type="button" class="clear" value="C" onclick="clearDisplay()">
+                <input type="button" class="number" value="0" onclick="addToDisplay('0')">
+                <input type="button" class="equal" value="=" onclick="calculate()">
+                <input type="button" class="operator" value="/" onclick="addToDisplay('/')">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
